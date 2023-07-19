@@ -1,5 +1,6 @@
 <?php
 	include "db.php";
+	include "Utility.php";
 ?>
 <?php
 
@@ -28,8 +29,10 @@ if($stat_type==1){ // Changing Task list status
 	$tl_status = intval(filter_var(strip_tags(trim($_POST['tl_status'])),FILTER_SANITIZE_STRING));
 	$db->updateTaskListStatus($id,$tl_status);
 }else if($stat_type==2){
+	$utility = new Utility();
 	$task_status = intval(filter_var(strip_tags(trim($_POST['task_status'])),FILTER_SANITIZE_STRING));
-	$db->updateTaskStatus($id,$task_status);
+	$uname = filter_var(strip_tags(trim($_POST['uname'])),FILTER_SANITIZE_STRING);
+	$db->updateTaskStatus($id,$task_status,$uname,$utility->getStatusList());
 }else if($stat_type==3){
 	$uid = intval(filter_var(strip_tags(trim($_POST['uid'])),FILTER_SANITIZE_STRING));
 	$task_name = filter_var(strip_tags(trim($_POST['task_name'])),FILTER_SANITIZE_STRING);
