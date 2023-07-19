@@ -34,6 +34,10 @@ if(!$db){ // not connected
 
 // Get User & verify status password
 $user = $db->getUserByUsername($un);
+if(!$user){
+	echo "<script>window.location.replace('index.php?msg=User or Password not error.');</script>";
+	die("Not Allowed");
+}
 if($user['status']!=1){
 	echo "<script>window.location.replace('index.php?msg=Inactive User.');</script>";
 	die("Not Allowed");
