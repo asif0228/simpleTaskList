@@ -42,7 +42,7 @@ $tasks = $db->getAllTaskWithEvents($_GET['tlid']);
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tasks - Login</title>
+	<title>Tasks - Tasks</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -122,6 +122,7 @@ $tasks = $db->getAllTaskWithEvents($_GET['tlid']);
 					
 					echo "<br/>";
 					echo "<form method='post' action='edit.php'>";
+					echo "<input type='hidden' name='uname' value='".$_SESSION['user']['name']."'>";
 					echo "<input type='hidden' name='tl_id' value='".$_GET['tlid']."'>";
 					echo "<input type='hidden' name='id' value='".$row['task_id']."'>";
 					echo "<input type='hidden' name='stat_type' value='2'>";
