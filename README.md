@@ -1,11 +1,10 @@
 # Simple Task List
 
 Directory Listing:
-
-CSS: assets/css
-JS: assets/js
-sqlite db: assets/db/db.db
-php codes: ./
+- CSS: assets/css
+- JS: assets/js
+- sqlite db: assets/db/db.db
+- php codes: ./
 
 Precondition:
 - Needs php
