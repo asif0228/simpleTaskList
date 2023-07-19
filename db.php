@@ -66,16 +66,13 @@ class DB extends SQLite3 {
 		}
 	}
 
-	function updateTaskStatus($tid,$status){
+	function updateTaskStatus($tid,$status,$uname,$stat_def){
+		// Update status
 		$sql = "UPDATE prj_task set status = ".$status." where id=".$tid.";";
 		$ret = $this->exec($sql);
-		if(!$ret) {
-			// echo $db->lastErrorMsg();
-			return false;
-		} else {
-			// echo $db->changes(), " Record updated successfully\n";
-			return true;
-		}
+		// Add event
+		$sql = "INSERT INTO prj_task_list_event (id, task_id, event_type, comment, date) VALUES (NULL, ".$tid.", 2, '".$uname." Changed status to ".$stat_def[$status].".', '".date("Y-m-d")."');";
+		$ret = $this->exec($sql);
 	}
 
 	function addTaskInTaskList($tl_id,$uid,$task_name,$status,$uname){
