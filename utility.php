@@ -24,6 +24,10 @@ class Utility{
 		}
 		return $res;
 	}
+
+	function getStatusList(){
+		return $this->stat;
+	}
 }
 
 ?>
