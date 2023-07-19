@@ -1,0 +1,85 @@
+table{
+	width: 100%;
+	text-align: center;
+}
+tr{
+	width: 100%;
+	text-align: center;	
+}
+.col td{
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+.col-3 td{
+	width: 33.3333333%;
+}
+.col-2 td{
+	width: 50%;
+}
+.col-4 td{
+	width: 25%;
+}
+.col-12 td{
+	width: 100%;
+}
+.c_red{
+	color: red;
+}
+/* Bordered form */
+.login{
+	border: 3px solid #f1f1f1;
+	padding: 16px;
+}
+/* Full-width inputs */
+.login input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.login select{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.login button{
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+.login button:hover{
+  opacity: 0.8;
+}
+
+.tbl{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tbl td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.tbl tr:nth-child(even) {
+  background-color: #dddddd;
+}
+small{
+  color: grey;
+}
