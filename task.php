@@ -27,7 +27,8 @@ $utility->setAllUser($db);
 $prj = $db->getProjectById(1);
 
 // Get all task lists
-$tasks = $db->getTaskList($prj['id'],1,1,1000);
+if(!isset($_GET['stat'])) $_GET['stat']=1;
+$tasks = $db->getTaskList($prj['id'],$_GET['stat'],1,1000);
 
 
 // print_r($prj);
@@ -42,7 +43,7 @@ $tasks = $db->getTaskList($prj['id'],1,1,1000);
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tasks - Login</title>
+	<title>Tasks - Task Lists</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -102,6 +103,24 @@ $tasks = $db->getTaskList($prj['id'],1,1,1000);
 								<button>Add</button>
 							</td>
 						</form>
+					</tr>
+					<tr class="login">
+						<td>Status</td>
+						<td>
+							<a href="?stat=1"><button>Active</button></a>
+						</td>
+						<td>
+							<a href="?stat=2"><button>Inactive</button></a>
+						</td>
+						<td>
+							<a href="?stat=3"><button>Testing</button></a>
+						</td>
+						<td>
+							<a href="?stat=4"><button>Resolved</button></a>
+						</td>
+						<td>
+							<a href="?stat=5"><button>Closed</button></a>
+						</td>
 					</tr>
 				</table>
 			</td>
