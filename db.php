@@ -31,7 +31,7 @@ class DB extends SQLite3 {
 
 	function getTaskList($prj_id,$status,$page,$limit){
 		$offset = ($limit * $page) - $limit;
-		$sql = "SELECT * FROM prj_task_list WHERE prj_id=".$prj_id." ORDER BY id DESC LIMIT ".$limit." OFFSET ".$offset.";";
+		$sql = "SELECT * FROM prj_task_list WHERE prj_id=".$prj_id." AND status=".$status." ORDER BY id DESC LIMIT ".$limit." OFFSET ".$offset.";";
 		return $this->query($sql);
 	}
 
