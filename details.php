@@ -69,7 +69,10 @@ $tasks = $db->getAllTaskWithEvents($_GET['tlid']);
 					<script type="text/javascript">changeSelectElement("tl_status",0,<?php echo $taskList['status']; ?>);</script>
 				</p>
 			</td>
-			<td><a href="logout.php"><button>Logout</button></a></td>
+			<td>
+				<button onclick="changePassword(prompt('Please enter new password.', ''),'logout.php');">Password Change</button>&nbsp;
+				<a href="logout.php"><button>Logout</button></a>&nbsp;
+			</td>
 		</tr>
 	</table>
 	<table class="tbl">
