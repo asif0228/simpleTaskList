@@ -4,6 +4,7 @@
 ?>
 <?php
 
+
 // check if session exists
 session_start();
 if (!isset($_SESSION) || !isset($_SESSION['user'])) {
@@ -55,7 +56,10 @@ $tasks = $db->getTaskList($prj['id'],$_GET['stat'],1,1000);
 		<tr class="col col-3">
 			<td>&nbsp;</td>
 			<td><h2><?php echo $prj['name']; ?></h2></td>
-			<td><a href="logout.php"><button>Logout</button></a></td>
+			<td>
+				<button onclick="changePassword(prompt('Please enter new password.', ''),'logout.php');">Password Change</button>&nbsp;
+				<a href="logout.php"><button>Logout</button></a>&nbsp;
+			</td>
 		</tr>
 		<tr>
 			<td colspan="3">
