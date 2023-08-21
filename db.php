@@ -95,6 +95,12 @@ class DB extends SQLite3 {
 		$sql = "INSERT INTO prj_task_list_event (id, task_id, event_type, comment, date) VALUES (NULL, ".$task_id.", 1, '".$uname.": ".$comment."', '".date("Y-m-d")."');";
 		$ret = $this->exec($sql);
 	}
+
+	function changePassword($uid,$newPass){
+		// Update status
+		$sql = "UPDATE users set password = '".password_hash($newPass,PASSWORD_DEFAULT)."' where id=".$uid.";";
+		$ret = $this->exec($sql);
+	}
 }
 
 ?>
