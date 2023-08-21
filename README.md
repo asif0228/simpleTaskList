@@ -9,3 +9,7 @@ Directory Listing:
 Precondition:
 - Needs php
 - Allow extension=sqlite3 in php.ini file. (;extension=sqlite3 to extension=sqlite3)
+
+Default User:
+username: admin
+password: admin
