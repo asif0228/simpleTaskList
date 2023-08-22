@@ -6,6 +6,7 @@ function changeSelectElement(name,no,value){
 }
 function changePassword(newPass,returnPage){
 	// alert(newPass);
+    if(newPass==null) return;
 	
 	let form = document.createElement("form");
     let element1 = document.createElement("input"); 
